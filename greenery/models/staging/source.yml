@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+
+  - name: greenery # name of the source (this can be named whatever you want, but should be descriptive. this source (superheroes) is used for our week 1 tutorial so thats why i named it this way)
+    schema: public # this is the schema our raw data lives in
+    database: dbt # this is the name of our database
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
+    tables:
+      - name: users 
+        loaded_at_field: created_at
+        description: >
+          Contains client information of each greenery client 
+      - name: addresses
+        description: >
+          Full client addreses of all greenery clients
+      - name: events
+        loaded_at_field: created_at
+        description: >
+          Event tracking of client sessions
+      - name: orders
+        loaded_at_field: created_at
+        description: >
+          order information for all clients
+      - name: products
+        description: >
+          greenery products information
+      - name: order_items
+        description: >
+          connecting products and orders 
+      - name: promos
+        description: >
+          promos run by greenery  
+
+
