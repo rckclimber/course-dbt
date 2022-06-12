@@ -1,8 +1,7 @@
 # Analytics engineering with dbt
+## Gaurang Swarge
 
-Template repository for the projects and environment of the course: Analytics engineering with dbt
-
-> Please note that this sets some environment variables so if you create some new terminals please load them again.
+- [Week 1 Project Readme](https://github.com/rckclimber/course-dbt/blob/main/week1_project_readme..md)
 
 ## License
 
