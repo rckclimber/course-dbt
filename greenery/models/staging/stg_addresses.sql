@@ -4,10 +4,21 @@
     )
 }}
 
+With source as (
+
+    Select * from {{ source('greenery','addresses') }}
+),
+
+renamed as (
+
+
 SELECT
     address_id
     , address
     , zipcode
     , state
     , country
-    FROM  {{ source('greenery','addresses') }}
+FROM source
+)
+
+Select * from renamed

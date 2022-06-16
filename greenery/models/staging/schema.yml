@@ -1,39 +1,45 @@
 version: 2
 
 models:
-  - name: stg_greenery_users
+  - name: stg_users
     description: client information of all greenery clients
     columns:
     - name: user_id
       tests:
         - not_null
-  - name: stg_greenery_addresses
+  - name: stg_addresses
     description: client addresses of all greenery clients
     columns:
     - name: address_id
       tests:
         - not_null
-  - name: stg_greenery_events
+  - name: stg_events
     description: Event tracking of client sessions
     columns:
     - name: event_id
       tests:
         - not_null
-  - name: stg_greenery_orders
+  - name: stg_orders
     description: Order information for all client orders
     columns:
     - name: order_id
       tests:
         - not_null
-  - name: stg_greenery_orderitems
+  - name: stg_orderitems
     description: connecting products and orders
     columns:
     - name: order_id
       tests:
         - not_null
-  - name: stg_greenery_promos
+  - name: stg_promos
     description: All promo information
     columns:
     - name: promo_id
+      tests:
+        - not_null
+  - name: stg_products
+    description: All products for sale
+    columns:
+    - name: products_id
       tests:
         - not_null
