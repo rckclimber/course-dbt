@@ -20,7 +20,7 @@ final as (
         , count(distinct orders.order_id) as total_orders_lifetime
         , count(distinct orderitems.product_id) as unique_items_ordered
         , sum(orders.order_total) as total_spends_lifetime
-        , avg(orders.order_total) as avg_order_spend_lifetime
+        , sum(orders.order_total) / count(distinct orders.order_id)  as avg_order_spend_lifetime
         , extract(day from CURRENT_DATE::timestamp - MAX(orders.created_at_utc::timestamp)) as days_since_last_order
         from orders
         left join orderitems on orderitems.order_id = orders.order_id

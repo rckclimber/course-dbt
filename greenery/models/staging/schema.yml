@@ -40,6 +40,6 @@ models:
   - name: stg_products
     description: All products for sale
     columns:
-    - name: products_id
+    - name: product_id
       tests:
         - not_null

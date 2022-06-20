@@ -13,10 +13,11 @@ users as (
 
 final as (
     select
-        , session_length.session_id
+         session_length.session_id
         , session_length.user_id
-        , concat(users.first_name,' 'users.last_name) as user_name
-        , session_length.session_start
+        , concat(users.first_name,' ',users.last_name) as user_name
+        , session_length.session_result
+        , session_length.session_starts
         , session_length.session_ends
         , session_events.no_of_events_in_session
         , session_events.checkout
