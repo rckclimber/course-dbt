@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: fct_page_views
+    description: All information related to users and orders
+  

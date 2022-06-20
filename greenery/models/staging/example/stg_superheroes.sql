@@ -1,6 +1,6 @@
 {{
     config (
-        materrialized = 'table'
+        materrialized = 'view'
     )
 }}
 

@@ -1,0 +1,6 @@
+version: 2
+models:
+  - name: int_product_agg_session_length
+    description: Caculating session length for each user sessions
+  - name: int_product_session_events_agg
+    description: Aggregating all the events in a session

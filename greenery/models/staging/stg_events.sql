@@ -1,8 +1,4 @@
-{{
-    config (
-        materialized = 'table'
-    )
-}}
+
 
 
 with source as (
@@ -21,6 +17,10 @@ renamed as (
         , created_at as created_at_utc
         , order_id
         , product_id
+        , case 
+            when order_id IS NOT NULL then 'success'
+            else 'abandoned' 
+            end as session_result
     from source
 )
 

@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: All information related to orders
+  - name: dim_users
+    description: user information
+  - name: dim_products
+    description: product information
+    
+    

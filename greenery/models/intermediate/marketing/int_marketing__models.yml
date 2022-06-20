@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: int_marketing_user_orders
+    description: Intermediate model to count users orders, total spends, average spends, days since last order

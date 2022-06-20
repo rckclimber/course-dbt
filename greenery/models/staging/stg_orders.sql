@@ -1,8 +1,3 @@
-{{
-    config (
-        materialized = 'table'
-    )
-}}
 
 
 with source as( 
@@ -23,7 +18,7 @@ renamed as (
     , order_total
     , tracking_id
     , shipping_service
-    , estimated_delivery_at
+    , estimated_delivery_at as estimated_delivery_at_utc
     , delivered_at as delivered_at_utc
     , status
     FROM  source
