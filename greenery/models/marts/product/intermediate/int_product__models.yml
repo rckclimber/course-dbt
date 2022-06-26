@@ -1,6 +1,8 @@
 version: 2
 models:
   - name: int_session_length_agg
-    description: Caculating session length for each user sessions
+    description: Intermediate model for caculating session length for each user sessions
   - name: int_session_events_agg
-    description: Aggregating all the events in a session
+    description: Intermediate model for aggregating all the events in a session
+  - name: int_product_sessions_agg
+    description: Intermediate model for aggregating all the session events related to a product 

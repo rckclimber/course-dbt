@@ -2,10 +2,10 @@ version: 2
 
 models:
   - name: fct_orders
-    description: All information related to orders
+    description: A single table which includes core informaion of all the orders at a glance
   - name: dim_users
-    description: user information
+    description: A single table which includes core informaion of all the users at a glance
   - name: dim_products
-    description: product information
+    description: A single table which includes core informaion of all the products at a glance
     
     

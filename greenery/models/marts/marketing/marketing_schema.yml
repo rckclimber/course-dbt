@@ -2,5 +2,5 @@ version: 2
 
 models:
   - name: fct_usr_orders
-    description: All information related to users and orders
+    description: All information related to users and their orders, with users as a grain
   

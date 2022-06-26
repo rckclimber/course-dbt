@@ -1,0 +1,39 @@
+version: 2
+
+macros:
+  - name: calc_session_length_min
+    description: A macro to calculate the session duration in minutes
+    arguments:
+      - name: session_start_time
+        type: timestamp
+        description: start time of the session
+      - name: session_end_time
+        type: timestamp
+        description: end time of the session
+
+  - name: conversion_rate
+    description: A macro to calculate the conversion rates of each product
+    arguments:
+      - name: no_of_times_ordered
+        type: integer
+        description: Count of number of times a product was ordered
+      - name: no_of_page_views
+        type: integer
+        description: count of no of times a product was viewed
+
+  - name: delivery_status
+    description: A macro to calculate the status of the order delivery, whether it was on-time, delayed or early
+    arguments:
+      - name: estimated_delivery_time
+        type: timestamp
+        description: estimated delivery time of the order
+      - name: Actual delivery time
+        type: timestamp
+        description: cActual delivery time of the order
+
+  - name: events_to_cols_agg
+    description: A macro to pivot and aggregate page events into columns for each session id. no arguments.\
+     It uses get_query_results_as_dict macro from dbt_utils package to pick up unique page events from events table.
+  
+  - name: grant_permissions
+    description: this macro is executed on-run-end hook of the dbt project. It grants the select permissions for the user 'reporting' to dbt schema 

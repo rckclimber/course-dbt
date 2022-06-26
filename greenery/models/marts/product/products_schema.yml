@@ -2,6 +2,6 @@ version: 2
 
 models:
   - name: fct_session_events
-    description: ASd
+    description: All the session related information with session as grain
   - name: fct_product_events
-    description: ASD
+    description: Combining products with orders and sessions
