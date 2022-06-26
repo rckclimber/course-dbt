@@ -27,3 +27,28 @@ select
   order by conversation_rate desc
 ```
 
+## Add a post hook to your project to apply grants to the role “reporting”. Create reporting role first by running CREATE ROLE reporting in your database instance.
+### Hook:
+```yml
+on-run-end:
+  - "grant select on all tables in schema  {{ target.schema }} to group reporting"
+```
+
+Code:
+```sql
+SELECT 
+  grantee, privilege_type, table_name
+FROM 
+  information_schema.role_table_grants
+WHERE table_name='fct_orders'
+```
+#### Output
+| gitpod    | INSERT     | fct_orders |
+|-----------|------------|------------|
+| gitpod    | SELECT     | fct_orders |
+| gitpod    | UPDATE     | fct_orders |
+| gitpod    | DELETE     | fct_orders |
+| gitpod    | TRUNCATE   | fct_orders |
+| gitpod    | REFERENCES | fct_orders |
+| gitpod    | TRIGGER    | fct_orders |
+| reporting | SELECT     | fct_orders |
