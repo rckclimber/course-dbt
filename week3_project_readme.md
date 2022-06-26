@@ -27,6 +27,10 @@ select
   order by conversation_rate desc
 ```
 
+## Create a macro to simplify part of a model(s)
+
+- Added multiple macros to the dbt project [Link here](https://github.com/rckclimber/course-dbt/blob/main/macros/macros_definition.yml)
+
 ## Add a post hook to your project to apply grants to the role “reporting”. Create reporting role first by running CREATE ROLE reporting in your database instance.
 ### Hook:
 ```yml

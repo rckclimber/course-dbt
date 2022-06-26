@@ -5,6 +5,8 @@
 
 - [Week 2 Project Readme](https://github.com/rckclimber/course-dbt/blob/main/week2_project_readme.md)
 
+- [Week 3 Project Readme](https://github.com/rckclimber/course-dbt/blob/main/week3_project_readme.md)
+
 ## License
 
 Apache 2.0
