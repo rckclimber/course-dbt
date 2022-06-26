@@ -22,10 +22,7 @@ final as (
         -- , events.session_result
         , session_start_end.session_starts
         , session_start_end.session_ends
-        , (   date_part('day', session_start_end.session_ends::timestamp - session_start_end.session_starts::timestamp) * 24 +
-            date_part('hour', session_start_end.session_ends::timestamp - session_start_end.session_starts::timestamp)) * 60 +
-            date_part('minute', session_start_end.session_ends::timestamp - session_start_end.session_starts::timestamp)
-        as session_length_minutes
+        , {{ calc_session_length_min( 'session_starts', 'session_ends' ) }} as session_length_minutes
     from events 
         left join session_start_end on events.session_id = session_start_end.session_id
 )

@@ -44,6 +44,7 @@ final as (
     , orders.delivered_at_utc
     , (orders.delivered_at_utc::timestamp - orders.created_at_utc::timestamp) as actual_time_to_delivery
     , (orders.delivered_at_utc::timestamp - orders.estimated_delivery_at_utc::timestamp) as diff_in_estimate_and_actual
+    , {{ delivery_status('estimated_delivery_at_utc','delivered_at_utc') }} as delivery_status
     , orders.status as order_status
     from  orders
     left join users on orders.user_id = users.user_id

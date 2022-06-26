@@ -43,3 +43,5 @@ models:
     marts:
       +materialized: table 
 
+on-run-end: "{{ grant_permissions('reporting') }}"
+ 
