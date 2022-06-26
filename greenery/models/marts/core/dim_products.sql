@@ -13,8 +13,8 @@ with products as (
 item_qty_ordered as (
     select 
         product_id
-        , count(order_id) as no_of_times_ordered
-        , sum(quantity) as total_ordered
+        , count(distinct order_id) as no_of_times_ordered
+        , sum(quantity) as total_qty_ordered
     
     from {{ref('stg_orderitems')}}
     GROUP BY 1
@@ -27,7 +27,7 @@ final as (
     , p.price
     , p.inventory
     , itq.no_of_times_ordered
-    , itq.total_ordered
+    , itq.total_qty_ordered
     from products p
     left join item_qty_ordered itq on itq.product_id = p.product_id
 )

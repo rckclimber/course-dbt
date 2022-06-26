@@ -17,10 +17,11 @@ renamed as (
         , created_at as created_at_utc
         , order_id
         , product_id
-        , case 
-            when order_id IS NOT NULL then 'success'
+        /*, case 
+            when (order_id IS NOT NULL) and (event_type = 'checkout') then 'success'
             else 'abandoned' 
             end as session_result
+            */
     from source
 )
 

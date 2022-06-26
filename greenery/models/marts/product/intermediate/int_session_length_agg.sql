@@ -19,7 +19,7 @@ final as (
     select
         distinct events.session_id
         , events.user_id
-        , events.session_result
+        -- , events.session_result
         , session_start_end.session_starts
         , session_start_end.session_ends
         , (   date_part('day', session_start_end.session_ends::timestamp - session_start_end.session_starts::timestamp) * 24 +

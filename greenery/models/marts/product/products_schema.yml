@@ -1,6 +1,7 @@
 version: 2
 
 models:
-  - name: fct_page_views
-    description: All information related to users and orders
-  
+  - name: fct_session_events
+    description: ASd
+  - name: fct_product_events
+    description: ASD
